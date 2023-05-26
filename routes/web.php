@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,46 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     // return view('welcome');
-    $users = DB::select("select * from user");
+
+    //fetch all users
+    // $users = DB::select("select * from user");
+    //$users = DB::table('user')->get();
+    $users = User::get();
+
+    //create new user
+    // $user = DB::insert('insert into user(username, password) values(?, ?)', [
+    //     'nouch',
+    //     '12345678'
+    // ]);
+    // $user = DB::table('user')->insert([
+    //     'username' => 'tenn',
+    //     'password' => 'nouch123'
+    // ]);
+    // $user = User::create([
+    //     'name' => 'sreyten',
+    //     'email' => 'srey@gmail.com',
+    //     'password' => 'tenn'
+    // ]);
+    
+    //update user
+    // $user = DB::update('update user set password=? where id = ?',[
+    //     '234567890',
+    //     2,
+    // ]);
+    // $user = DB::table('user')->where('id',2)->update([
+    //     'password' => 'nouch',
+    // ]);
+    // $user = User::find(1);
+    // $user->update([
+    //     'email' => "nana@gmail.com"
+    // ]);
+
+    //delete user
+    //$user = DB::delete("delete from user where id=5");
+    //$user = DB::table('user')->where('id', 2)->delete();
+    // $user = User::find(1);
+    // $user->delete();
+    
     dd($users);
 });
 
