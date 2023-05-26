@@ -21,7 +21,7 @@ Route::get('/', function () {
     //fetch all users
     // $users = DB::select("select * from user");
     //$users = DB::table('user')->get();
-    $users = User::get();
+    $user = User::find(3);
 
     //create new user
     // $user = DB::insert('insert into user(username, password) values(?, ?)', [
@@ -34,8 +34,8 @@ Route::get('/', function () {
     // ]);
     // $user = User::create([
     //     'name' => 'sreyten',
-    //     'email' => 'srey@gmail.com',
-    //     'password' => 'tenn'
+    //     'email' => 'sreyyy@gmail.com',
+    //     'password' => 'tennnn'
     // ]);
     
     //update user
@@ -57,7 +57,7 @@ Route::get('/', function () {
     // $user = User::find(1);
     // $user->delete();
     
-    dd($users);
+    dd($user->name);
 });
 
 Route::get('/dashboard', function () {
